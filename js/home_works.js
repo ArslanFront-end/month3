@@ -1,8 +1,8 @@
 
 //  Регуляр
-const gmailInput = document.getElementById('gmail_input')
-const gmailBtn = document.getElementById('gmail_button')
-const gmailResult = document.getElementById('gmail_result')
+const gmailInput = document.getElementById('gmail_input'),
+    gmailBtn = document.getElementById('gmail_button'),
+    gmailResult = document.getElementById('gmail_result')
 
 
 const regExp = /^(.+)@(gmail.com)$/ 
@@ -21,6 +21,7 @@ gmailBtn.onclick = () => {
 //Рекурсия
 const childBlock = document.querySelector('.child_block')
 let positionX = 0
+
 const moveBlock = () => {
     positionX += 1
     childBlock.style.left = positionX + 'px'
