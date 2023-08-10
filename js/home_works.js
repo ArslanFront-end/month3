@@ -23,10 +23,10 @@ const childBlock = document.querySelector('.child_block')
 let positionX = 0
 
 const moveBlock = () => {
-    positionX += 1
-    childBlock.style.left = positionX + 'px'
-    if (positionX >= 450){
-        positionX = 0
+    if (positionX <= 450){
+        positionX++
+        childBlock.style.left = positionX + 'px'
+        setTimeout(moveBlock, 0)
     }
 }
-setInterval(moveBlock, 5)
+moveBlock()
