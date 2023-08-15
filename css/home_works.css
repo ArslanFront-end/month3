@@ -1,19 +1,22 @@
 
 /* GMAIL BLOCK */
-
 .gmail_block {
-    background: black;
+    /* background: black; */
     padding: 100px 0;
 }
 
 .inner_gmail_block {
     margin-top: 50px;
-    display: flex;
-    justify-content: space-evenly;
-    border: 1px solid orange;
     height: 300px;
-    border-radius: 20px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 15px #0008;
+    z-index: 2;
+    border: 2px solid black;
+    background-image: url(../images/reinkarnaciya-bezrabotnogo-3-sezon-1200x520.jpeg);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
 }
 
 .form_gmail {
@@ -30,25 +33,71 @@
 /* MOVE BLOCK */
 
 .move_block {
-    background: black;
     padding: 100px 0;
+    /* background-color: black; */
 }
 
 .parent_block {
     height: 500px;
     width: 500px;
-    border: 2px solid orange;
-    /* position: relative; */
+    background-color: black;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/index.jpeg);
+    /* border: 2px solid orange; */
+    position: relative;
     margin: 0 auto;
+    border-radius: 6px;
+    
+}
+.parent_block::after,
+.parent_block::before{
+    content: "";
+    z-index: -2;
+    position: absolute;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    top: -15px;
+    left: -15px;
+    background: linear-gradient(
+        45deg,#fff000,#00ff00,#00ff,#0099ff,#ff0000,#191970,#FF00FF,#800080,#008080,#00FF00,#C0C0C0
+    );
+    background-size: 999px;
+    animation: border 12s linear infinite;
+}
+.parent_block::after{
+    filter: blur(50px);
+}
+@keyframes border {
+    0%,100%{
+        background-position:0 0 ;
+    }
+    50%{
+        background-position:300%;
+    }
 }
 
-.child_block {
-    /* position: absolute; */
+.child_block{
+    position: absolute;
+    border-radius: 5px;
     width: 50px;
     height: 50px;
-    /* background: red; */
+    background: red;
     background-image: url(../images/1.jpeg);
     background-size: cover;
+    
+}
+.ars{
+    padding-top: 250px;
+    padding-left: 40px;
+    font: 700;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 30px;
+    color: black;
+    position: absolute;
 }
 
 .inner_move_block {
@@ -58,7 +107,9 @@
 /* STOP WATCH */
 
 .time {
-    color: white;
+    color: black;
+    background-image: url(../images/123.jpeg);
+    background-size: cover;
     display: flex;
     justify-content: center;
     font-size: 80px;
@@ -71,12 +122,12 @@
 .time_block {
     display: flex;
     width: 500px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .stopwatch {
     padding: 100px 0;
-    background: black;
+    /* background: black; */
 }
 
 .time_buttons {
@@ -84,4 +135,70 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.btns{
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.btns:nth-child(1){
+    color: #a200fa;
+    box-shadow: 0 0 15px  #a200fa,
+    inset 0 0 15px  #a200fa
+}
+.btns:hover:nth-child(1){
+    background: #a200fa;
+    box-shadow: 0 0 15px  #a200fa, inset 0 0 15px  #a200fa
+}
+.btns:nth-child(2){
+    color: #00FFFF;
+    box-shadow: 0 0 15px #00FFFF,
+    inset 0 0 15px  #00FFFF
+}
+.btns:hover:nth-child(2){
+    background: #00FFFF;
+    box-shadow: 0 0 15px  #00FFFF, inset 0 0 15px  #00FFFF
+}
+.btns:nth-child(3){
+    color: #00FF00;
+    box-shadow: 0 0 15px #00FF00,
+    inset 0 0 15px  #00FF00
+}
+.btns:hover:nth-child(3){
+    background: #00FF00;
+    box-shadow: 0 0 15px  #00FF00, inset 0 0 15px  #00FF00
+}
+.btns:nth-child(4){
+    color: #0000CD;
+    box-shadow: 0 0 15px #0000CD,
+    inset 0 0 15px  #0000CD
+}
+.btns:hover:nth-child(4){
+    background: #0000CD;
+    box-shadow: 0 0 15px  #0000CD, inset 0 0 15px  #0000CD
+}
+.btns:hover{
+    color: white;   
+    border: none;
+}
+
+.title_text{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+video{
+    width: 500px;
+    height:500px;
 }
