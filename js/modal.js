@@ -39,6 +39,6 @@ window.addEventListener('scroll', () => {
 })
 
 
-setTimeout(()=>{openModal()},10000)
+setTimeout(()=>{openModal()},10000);
 
 
