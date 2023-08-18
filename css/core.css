@@ -11,8 +11,8 @@
 
 body {
     font-family: "Britannic Bold", sans-serif;
-    /* background: black; */
-    background-image: url(../images/fon.jpeg);
+    background: black;
+    /* background-image: url(../images/fon.jpeg); */
     background-size: cover;
     background-repeat: no-repeat;
     
