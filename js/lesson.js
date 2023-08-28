@@ -81,7 +81,7 @@ const convert = (elem, target, target2, ) => {
         request.send()
         request.onload = () => {
             const response = JSON.parse(request.response)
-            target.forEach(e =>{
+            target.forEach(e => {
                 if (target2 === 'som') {
                     e.value = (elem.value / response[e.id]).toFixed(2)
                 } else if (e === som) {
@@ -92,12 +92,50 @@ const convert = (elem, target, target2, ) => {
             })
             if (elem.value === '') {
                 target.forEach(e => e.value = '')
+                elem.value === '' && (target.forEach(e => e.value = ''))
             }
-
-            elem.value === '' && (target.forEach(e => e.value = ''))
         }
     }
 }
-convert(som,[usd , eur])
-convert(usd ,[som,eur] )
-convert(eur,[som,usd])
+    convert(som,[usd , eur])
+    convert(usd ,[som,eur])
+    convert(eur,[som,usd])
+
+
+
+//CARD SWITCHER
+
+const card = document.querySelector('.card')
+const btnPrev = document.querySelector('#btn-prev')
+const btnNext = document.querySelector('#btn-next')
+let count = 0
+const requestFetch = () => {
+    fetch(`http://jsonplaceholder.typicode.com/todos/${count}`)
+        .then(response => response.json())
+        .then(data => {
+            card.innerHTML = `
+            <p>${data.title}</p>
+            <p>${data.completed}</p>
+            <span>${data.id}</span>
+            `
+        })
+}
+btnNext.onclick = () => {
+    if (count++ && count >= 201){
+        count = 1
+    }
+    requestFetch()
+}
+btnPrev.onclick = () => {
+    if (count-- && count <= 1){
+     count = 200
+    }
+    requestFetch()
+}
+
+const getPosts = () => {
+    fetch( 'https://jsonplaceholder.typicode.com/posts' )
+        .then(response => response.json())
+        .then(data => console.log('posts', data))
+}
+getPosts()
