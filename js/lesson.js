@@ -127,7 +127,7 @@ btnNext.onclick = () => {
     requestFetch()
 }
 btnPrev.onclick = () => {
-    if (count-- && count <= 1){
+    if (count-- && count <= 0){
      count = 200
     }
     requestFetch()
