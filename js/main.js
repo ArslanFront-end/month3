@@ -33,15 +33,15 @@ const slides = document.querySelectorAll('.slide')
 const next = document.querySelector('#next')
 const prev = document.querySelector('#prev')
 let index = 0
-
+console.log(slides)
 const hideSlide = () => {
     slides.forEach((slide) => {
-        slide.style.opacity = 0
+        slide.style.opacity = '0'
         slide.classList.remove('active_slide')
     })
 }
-const showSlide = (i = 0) => {
-    slides[i].style.opacity = 1
+const showSlide = (i) => {
+    slides[i].style.opacity = '1'
     slides[i].classList.add('active_slide')
 }
 
@@ -73,3 +73,4 @@ prev.onclick = () => {
 }
 
 autoSlider(index)
+

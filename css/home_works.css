@@ -1,4 +1,6 @@
-
+body{
+    background-image: url(../images/fon.jpeg);
+}
 /* GMAIL BLOCK */
 .gmail_block {
     /* background: black; */
